@@ -63,11 +63,9 @@ public class Expendedor {
                         if (Tipo == COCA && m.getValor() >= precio && coca.empty() == false) {
                             vuelto = m.getValor() - precio;
                                 for (int i = 0; i < vuelto / 100; ++i) {
-<<<<<<< HEAD
-                                    dep.addMoneda(new Moneda100());
-=======
+
                                     dep.addMoneda(new Moneda100(100 + i));
->>>>>>> Mitad1
+
                                 }
                                     return coca.getBebida();
                             }
@@ -76,22 +74,18 @@ public class Expendedor {
                          else if (Tipo == SPRITE && m.getValor() >= precio && sprite.empty() == false) {
                             vuelto = m.getValor() - precio;
                                 for (int i = 0; i < vuelto / 100; ++i) {
-<<<<<<< HEAD
-                                    dep.addMoneda(new Moneda100());
-=======
+
                                     dep.addMoneda(new Moneda100(100 + i));
->>>>>>> Mitad1
+
                                 }
                                 return sprite.getBebida();
                             }
                          else if (Tipo == FANTA && m.getValor() >= precio && fanta.empty() == false) {
                             vuelto = m.getValor() - precio;
                                 for (int i = 0; i < vuelto / 100; ++i) {
-<<<<<<< HEAD
-                                    dep.addMoneda(new Moneda100());
-=======
+
                                     dep.addMoneda(new Moneda100(100 + i));
->>>>>>> Mitad1
+
                                 }
                                 return fanta.getBebida();
                             }

@@ -46,16 +46,12 @@ public class Comprador {
     }
     public void paint(Graphics g){
         g.setColor(Color.cyan);
-<<<<<<< HEAD
-        g.drawRect(x,y,300,600);
-=======
         g.fillOval(x,y+40,100,100);
         g.fillRect(x+35, y+120, 30, 250);
         g.fillRect(x-70, y+150, 250, 30);
         g.fillRect(x+34, y+300, 14, 200);
         g.fillRect(x+52, y+300, 15, 200);
         
->>>>>>> Mitad1
         depB.paint(g);
         depV.paint(g);
     }

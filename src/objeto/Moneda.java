@@ -3,13 +3,7 @@ package objeto;
 import java.awt.Graphics;
 
 public abstract class Moneda {
-<<<<<<< HEAD
     
-    public Moneda(){
-        
-    }
-    
-=======
     private int serie;
     protected int x;
     protected int y;
@@ -23,8 +17,7 @@ public abstract class Moneda {
         this.x = a;
         this.y = b;
     }
-    
->>>>>>> Mitad1
+   
     public int getSerie(){
         return this.hashCode();
     }

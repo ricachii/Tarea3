@@ -4,13 +4,10 @@ package objeto;
 import java.awt.Graphics;
 
 public class Moneda100 extends Moneda {
-<<<<<<< HEAD
-    public Moneda100(){
-        super();
-=======
+
     public Moneda100(int n){
         super(n);
->>>>>>> Mitad1
+
     }
     public int getValor(){
         return 100;

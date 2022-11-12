@@ -14,13 +14,9 @@ import javax.swing.JPanel;
 public class Panel extends JPanel implements MouseListener{
     
   private Expendedor E = new Expendedor(3,1000,600,50);
-<<<<<<< HEAD
-  private Moneda1000 M = new Moneda1000();
-    private Comprador C =new Comprador(M,E,3,50,50);
-=======
+
   private Moneda1000 M = new Moneda1000(100);
   private Comprador C =new Comprador(M,E,3,105,50);
->>>>>>> Mitad1
     
     public Panel(){
         this.setBackground(Color.LIGHT_GRAY);
