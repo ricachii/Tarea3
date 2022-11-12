@@ -19,6 +19,8 @@ public class Panel extends JPanel implements MouseListener{
   private Comprador C =new Comprador(M,E,3,105,50);
     
     public Panel(){
+        super();
+        this.addMouseListener(this);
         this.setBackground(Color.LIGHT_GRAY);
     }
     public void paint(Graphics g){
@@ -33,6 +35,7 @@ public class Panel extends JPanel implements MouseListener{
       try {
           E.comprarBebida(M, 3);
           repaint();
+          System.out.println("press");
       } catch (PagoIncorrectoException ex) {
           Logger.getLogger(Panel.class.getName()).log(Level.SEVERE, null, ex);
       } catch (NoHayBebidaException ex) {
@@ -40,6 +43,7 @@ public class Panel extends JPanel implements MouseListener{
       } catch (PagoInsuficienteException ex) {
           Logger.getLogger(Panel.class.getName()).log(Level.SEVERE, null, ex);
       }
+        
     }
     public void mouseReleased(MouseEvent e) {;}
     public void mouseEntered(MouseEvent e) {;}
