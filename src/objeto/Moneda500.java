@@ -4,8 +4,13 @@ package objeto;
 import java.awt.Graphics;
 
 public class Moneda500 extends Moneda {
+<<<<<<< HEAD
     public Moneda500(){
         super();
+=======
+    public Moneda500(int n){
+        super(n);
+>>>>>>> Mitad1
     }
     public int getValor(){
         return 500;

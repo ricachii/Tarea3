@@ -14,7 +14,11 @@ public class Ventana extends JFrame {
         
         
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+<<<<<<< HEAD
         this.setSize(900,600);
+=======
+        this.setSize(1100,600);
+>>>>>>> Mitad1
         this.setVisible(true);
     }
 }
