@@ -16,4 +16,5 @@ public class CocaCola extends Bebida{
         g.setColor(Color.BLACK);
         g.drawString("Coca-cola",x+4,y+16);
     }
+   
 }

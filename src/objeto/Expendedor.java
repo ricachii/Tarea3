@@ -67,7 +67,8 @@ public class Expendedor {
                                     dep.addMoneda(new Moneda100(100 + i));
 
                                 }
-                                    return coca.getBebida();
+                               
+                                return coca.getBebida();
                             }
 
                            
@@ -87,6 +88,7 @@ public class Expendedor {
                                     dep.addMoneda(new Moneda100(100 + i));
 
                                 }
+                               
                                 return fanta.getBebida();
                             }
 
@@ -125,6 +127,20 @@ public class Expendedor {
         coca.paint(g);
         sprite.paint(g);
         fanta.paint(g);
+    }
+    
+    public void mover(int T){
+        if(T == 1 && coca.empty() == false){
+            coca.mover();          
+        }   
+        if(T == 2 && sprite.empty() == false){
+            sprite.mover();
+        }
+        if(T == 3 && fanta.empty() == false){
+            fanta.mover();
+           
+        }
+        
     }
 
 }

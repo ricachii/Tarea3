@@ -19,11 +19,6 @@ public class Comprador {
         serie = e.getSerie(x);
         depB = new Deposito(x+10,y+10);
         depV = new DepositoVuelto(x+150,y+10);
-        try {
-            sabor = e.comprarBebida(M, x).beber();
-        } catch (PagoIncorrectoException | NoHayBebidaException | PagoInsuficienteException ex) {
-            ex.printStackTrace();
-        }
         
         
         while(e.DepSize() != true){          
