@@ -16,5 +16,4 @@ import java.awt.Graphics;
         g.setColor(Color.BLUE);
         g.drawString("Fanta", x+27, y+10);
     }
-    
 }

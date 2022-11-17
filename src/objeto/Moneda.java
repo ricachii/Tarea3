@@ -4,20 +4,10 @@ import java.awt.Graphics;
 
 public abstract class Moneda {
     
-    private int serie;
-    protected int x;
-    protected int y;
-    
-    public Moneda(int s){
-        serie = s;
+    public Moneda(){
         
     }
     
-    public void setPosicion(int a, int b){
-        this.x = a;
-        this.y = b;
-    }
-   
     public int getSerie(){
         return this.hashCode();
     }

@@ -4,10 +4,12 @@ package objeto;
 import java.awt.Graphics;
 
 public class Moneda500 extends Moneda {
-
-    public Moneda500(int n){
-        super(n);
-
+    private int x,y;
+    public Moneda500(int a, int b){
+        super();
+        this.x = a;
+        this.y = b;
+        
     }
     public int getValor(){
         return 500;
@@ -17,7 +19,8 @@ public class Moneda500 extends Moneda {
     }
     @Override
     public void paint(Graphics g){
-        
+        g.drawOval(x,y,50,50); 
+        g.drawString("500", x+15, y+25);
     }
     
 }

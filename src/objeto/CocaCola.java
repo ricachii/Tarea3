@@ -3,7 +3,7 @@ package objeto;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class CocaCola extends Bebida{
+ class CocaCola extends Bebida{
     public CocaCola(int Serie){
         super(Serie);
     }
@@ -16,5 +16,4 @@ public class CocaCola extends Bebida{
         g.setColor(Color.BLACK);
         g.drawString("Coca-cola",x+4,y+16);
     }
-   
 }

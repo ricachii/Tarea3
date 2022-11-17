@@ -10,6 +10,7 @@ public class Expendedor {
     public static final int COCA = 1;
     public static final int SPRITE = 2;
     public static final int FANTA = 3;
+    private ContenedorBebida c;
     private int x,y;
     private Deposito coca, sprite, fanta;
 
@@ -20,6 +21,7 @@ public class Expendedor {
         coca = new Deposito(x,y);
         sprite = new Deposito(x+160,y);
         fanta = new Deposito(x+320,y);
+        c = new ContenedorBebida(x+120,y+400);
         this.precio = precioBebidas;
 
         for (int i = 0; i < numBebidas; i++) {  //Etiquetando bebidas
@@ -44,68 +46,46 @@ public class Expendedor {
         return 0;
     }
 
-    public Bebida comprarBebida(Moneda m, int Tipo) throws PagoIncorrectoException, objeto.NoHayBebidaException, objeto.PagoInsuficienteException {//Creacion de Metodo del tipo Bebida para comprar una bebida
-        if (m == null) {
-            throw new PagoIncorrectoException("Metodo de pago incorrecto, Moneda no tiene valor");
-        } else {
-            if (m.getValor() < precio) {
-                dep.addMoneda(m);
-                throw new PagoInsuficienteException("Cantidad de pago insuficiente");
-
-            } else {
-
-                if (m != null) {
-                    if ((Tipo == COCA && coca.empty() == true) || (Tipo == SPRITE && sprite.empty() == true) || (Tipo == FANTA && fanta.empty() == true) || Tipo <= 0 || Tipo > 3) {
-                        dep.addMoneda(m);
-                        throw new NoHayBebidaException("Deposito Vacio o codigo de bebida erroneo");
-
-                    } else {
-                        if (Tipo == COCA && m.getValor() >= precio && coca.empty() == false) {
-                            vuelto = m.getValor() - precio;
-                                for (int i = 0; i < vuelto / 100; ++i) {
-
-                                    dep.addMoneda(new Moneda100(100 + i));
-
-                                }
-                               
-                                return coca.getBebida();
-                            }
-
-                           
-                         else if (Tipo == SPRITE && m.getValor() >= precio && sprite.empty() == false) {
-                            vuelto = m.getValor() - precio;
-                                for (int i = 0; i < vuelto / 100; ++i) {
-
-                                    dep.addMoneda(new Moneda100(100 + i));
-
-                                }
-                                return sprite.getBebida();
-                            }
-                         else if (Tipo == FANTA && m.getValor() >= precio && fanta.empty() == false) {
-                            vuelto = m.getValor() - precio;
-                                for (int i = 0; i < vuelto / 100; ++i) {
-
-                                    dep.addMoneda(new Moneda100(100 + i));
-
-                                }
-                               
-                                return fanta.getBebida();
-                            }
-
-                            
-
-                         else {
-                            return null;
-                        }
-
+    public Bebida comprarBebida(Moneda m, int Tipo){//Creacion de Metodo del tipo Bebida para comprar una bebida
+ if(m != null ){// deposito  no vacio y existe una moneda valida
+            if(Tipo == COCA && m.getValor() >= precio && coca.empty() == false){// si el numero ingresado corresponde a coca y el valor de la moneda corresponde al precio y existen cocacola
+                vuelto = m.getValor() - precio;//valor de la moneda - precio de bebida
+             
+                while(true){//logica de agregar monedas de 100  al deposito 
+                    if(vuelto <= 0){
+                        break;
                     }
-
-                } else {
-                    return null;
-
+                    vuelto = vuelto - 100;
+                    
                 }
-
+                return coca.getBebida();
+            }else if(Tipo == SPRITE && m.getValor() >= precio && sprite.empty() == false){
+                vuelto = m.getValor() - precio;
+                
+                while(true){
+                    if(vuelto <= 0){
+                        break;
+                    }
+                    vuelto = vuelto - 100;
+                    
+                }
+                return sprite.getBebida();
+                }else if(Tipo == FANTA && m.getValor() >= precio && fanta.empty() == false){
+                vuelto = m.getValor() - precio;
+                
+                while(true){
+                    if(vuelto <= 0){
+                        break;
+                    }
+                    vuelto = vuelto - 100;
+                    
+                }
+                return fanta.getBebida();
+            }else{
+                return null;
             }
+        }else{
+            return null;
         }
     }
 
@@ -127,20 +107,7 @@ public class Expendedor {
         coca.paint(g);
         sprite.paint(g);
         fanta.paint(g);
-    }
-    
-    public void mover(int T){
-        if(T == 1 && coca.empty() == false){
-            coca.mover();          
-        }   
-        if(T == 2 && sprite.empty() == false){
-            sprite.mover();
-        }
-        if(T == 3 && fanta.empty() == false){
-            fanta.mover();
-           
-        }
-        
+        c.paint(g);
     }
 
 }
