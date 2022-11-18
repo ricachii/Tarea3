@@ -20,7 +20,12 @@ import java.awt.Color;
         return c;
     }
     public void paint(Graphics g) {
-       
+        if(c != null){
+            c.setPosicion(x+55, y+70);
+            c.paint(g);
+        }
+            
+        
         g.drawRect(x, y, 200, 100);
        
         

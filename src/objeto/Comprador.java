@@ -5,6 +5,8 @@ import java.awt.Graphics;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.awt.Graphics2D;
+import static java.lang.Math.max;
+import static java.lang.Math.random;
 
 public class Comprador {
     private String sabor;
@@ -16,9 +18,11 @@ public class Comprador {
     private Moneda100 M;
     private Moneda500 M5;
     private Moneda1000 M10;
+    private ContenedorBebida C;
+    private int ser1,ser2,ser3;
     
     private int tipo, vueltocompleto = 0, serie;
-    public Comprador(Moneda M,Expendedor e,int Tipo, int a, int b) {      
+    public Comprador(Moneda M1,Expendedor e,int Tipo, int a, int b) {      
         this.x = a;
         this.y = b;
         this.E = e;
@@ -40,18 +44,23 @@ public class Comprador {
        
     }
     
-    public void click(int a,int b) throws PagoIncorrectoException, PagoInsuficienteException, NoHayBebidaException{
-        if(a>=x && a<=x+300 && b>=y && b<=y+600){
-            E.comprarBebida(M10, 2);
-        }    
+    public void click(int a,int b){  
+             
+        
+        ser1 = (int)(Math.random()*((100-10)+1))+10; //generamos series aleatorias para las monedas  
+        ser2 = (int)(Math.random()*((500-10)+1))+10;
+        ser3 = (int)(Math.random()*((1000-10)+1))+10;
         if(a>=x+30&& a<=x+80 && b>=y+350 && b<=y+400){
-        System.out.println("100");
+        System.out.println(ser1+"");
         }
         if(a>=x+90&& a<=x+140 && b>=y+350 && b<=y+400){
-        System.out.println("500");
+        System.out.println(ser2+"");
         }
         if(a>=x+220&& a<=x+270 && b>=y+350 && b<=y+400){
-        System.out.println("1000");
+        System.out.println(ser3+"");
+        }
+        if(a == x+55 && b == y+70 ){
+            //C.getBebida(x, y, C);
         }
     }
     
@@ -69,7 +78,6 @@ public class Comprador {
     }
     public void paint(Graphics g){
         g.setColor(Color.cyan);
-        g.drawRect(x,y,300,600);
         g.fillOval(x,y+40,100,100);
         g.fillRect(x+35, y+120, 30, 250);
         g.fillRect(x-70, y+150, 250, 30);

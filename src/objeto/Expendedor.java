@@ -46,20 +46,12 @@ public class Expendedor {
         return 0;
     }
 
-    public Bebida comprarBebida(Moneda m, int Tipo)throws PagoIncorrectoException, objeto.NoHayBebidaException, objeto.PagoInsuficienteException {//Creacion de Metodo del tipo Bebida para comprar una bebida
-        if (m == null) {
-            throw new PagoIncorrectoException("Metodo de pago incorrecto, Moneda no tiene valor"); 
-        } else {
-            if (m.getValor() < precio) {
-                dep.addMoneda(m);
-                throw new PagoInsuficienteException("Cantidad de pago insuficiente");
-
-            } else {
-
+    public void comprarBebida(Moneda m, int Tipo) {//Creacion de Metodo del tipo Bebida para comprar una bebida
+      
                 if (m != null) {
                     if ((Tipo == COCA && coca.empty() == true) || (Tipo == SPRITE && sprite.empty() == true) || (Tipo == FANTA && fanta.empty() == true) || Tipo <= 0 || Tipo > 3) {
                         dep.addMoneda(m);
-                        throw new NoHayBebidaException("Deposito Vacio o codigo de bebida erroneo");
+                    
 
                     } else {
                         if (Tipo == COCA && m.getValor() >= precio && coca.empty() == false) {
@@ -70,7 +62,9 @@ public class Expendedor {
 
                                 }
                                
-                                return coca.getBebida();
+                                c.setBebida(coca.getBebida());
+                                coca.mover();
+                                
                             }
 
                            
@@ -81,7 +75,8 @@ public class Expendedor {
                                     dep.addMoneda(new Moneda100(100 + i));
 
                                 }
-                                return sprite.getBebida();
+                                c.setBebida(sprite.getBebida());
+                                sprite.mover();
                             }
                          else if (Tipo == FANTA && m.getValor() >= precio && fanta.empty() == false) {
                             vuelto = m.getValor() - precio;
@@ -91,25 +86,17 @@ public class Expendedor {
 
                                 }
                                
-                                return fanta.getBebida();
-                            }
-
-                            
-
-                         else {
-                            return null;
-                        }
+                                c.setBebida(fanta.getBebida());
+                                fanta.mover();
+                         }
 
                     }
 
-                } else {
-                    return null;
-
-                }
+                } 
 
             }
-        }
-    }
+        
+    
 
   
 
