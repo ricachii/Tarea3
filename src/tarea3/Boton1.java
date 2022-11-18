@@ -13,23 +13,26 @@ import objeto.Moneda1000;
 import objeto.NoHayBebidaException;
 import objeto.PagoIncorrectoException;
 import objeto.PagoInsuficienteException;
-
+import objeto.UseMoneda;
+import java.util.ArrayList;
 
 public class Boton1 extends JButton {
-    private Moneda mo;
+   private Moneda mo;
+   private UseMoneda um; 
    private ContenedorBebida cb;
    private Expendedor ex;
    private Panel mp;
-   public Boton1(String n, Panel mp, Expendedor Ex){
+   public Boton1(String n, Panel mp, Expendedor Ex, UseMoneda u){
      super(n);
      this.ex = Ex;
      this.mp = mp;
+     this.um = u;
      this.addActionListener(new EscuchadorBotton());
    }
    private class EscuchadorBotton implements ActionListener {
      public void actionPerformed(ActionEvent ae) {
          try {
-             ex.comprarBebida(new Moneda1000(100), 2);
+             ex.comprarBebida(um.getMon(), 2);
          } catch (PagoIncorrectoException | PagoInsuficienteException | NoHayBebidaException ex) {
              Logger.getLogger(Boton.class.getName()).log(Level.SEVERE, null, ex);
          }

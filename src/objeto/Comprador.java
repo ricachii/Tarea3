@@ -20,6 +20,7 @@ public class Comprador {
     private Moneda1000 M10;
     private ContenedorBebida C;
     private int ser1,ser2,ser3;
+    private UseMoneda use;
     
     private int tipo, vueltocompleto = 0, serie;
     public Comprador(Moneda M1,Expendedor e,int Tipo, int a, int b) {      
@@ -37,6 +38,7 @@ public class Comprador {
         M5.setPosicion(x+90, y+350);
         M10= new Moneda1000(242);
         M10.setPosicion(x+220, y+350);
+        use = new UseMoneda();
       
         while(e.DepSize() != true){          
             vueltocompleto += e.getVuelto().getValor();
@@ -50,13 +52,15 @@ public class Comprador {
         ser2 = (int)(Math.random()*((500-10)+1))+10;
         ser3 = (int)(Math.random()*((1000-10)+1))+10;
         if(a>=x+30&& a<=x+80 && b>=y+350 && b<=y+400){
-            new Moneda100(ser1).setPosicion(x+330,y+300);
-        System.out.println(ser1+"");
+            use.setMoneda(new Moneda100(ser1), x-75,y+95);          
+            System.out.println(ser1+"");
         }
         if(a>=x+90&& a<=x+140 && b>=y+350 && b<=y+400){
+            use.setMoneda(new Moneda500(ser1), x-75,y+95); 
         System.out.println(ser2+"");
         }
         if(a>=x+220&& a<=x+270 && b>=y+350 && b<=y+400){
+            use.setMoneda(new Moneda1000(ser1), x-75,y+95); 
         System.out.println(ser3+"");
         }
         if(a == x+55 && b == y+70 ){
@@ -76,6 +80,12 @@ public class Comprador {
     public int getSerie(){
         return serie;
     }
+    
+    public UseMoneda getUse(){
+        return use;
+    }
+    
+    
     public void paint(Graphics g){
         g.setColor(Color.cyan);
         g.fillOval(x,y+40,100,100);
@@ -88,6 +98,9 @@ public class Comprador {
         M.paint(g);
         M5.paint(g);
         M10.paint(g);
+        if(use != null){
+            use.paint(g);
+        }
     }
     
 }

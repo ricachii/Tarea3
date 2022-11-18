@@ -36,6 +36,9 @@ public class Panel extends JPanel implements MouseListener{
     public Expendedor GetExp(){
         return E;
     }
+    public UseMoneda getUse(){
+        return C.getUse();
+    }
     public void mouseClicked(MouseEvent e) {
     }
     public void mousePressed(MouseEvent e) {

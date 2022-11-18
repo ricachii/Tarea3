@@ -13,13 +13,13 @@ public class Ventana extends JFrame {
         Panel m = new Panel();
         m.setLayout(null);
         this.add(m,BorderLayout.CENTER);
-        Boton B = new Boton("Sale", m, m.GetExp());
+        Boton B = new Boton("Sale", m, m.GetExp(), m.getUse());
         B.setBounds(630, 370, 70, 30 );
         m.add(B);
-        Boton1 B1 = new Boton1("Sprite", m, m.GetExp());
+        Boton1 B1 = new Boton1("Sprite", m, m.GetExp(), m.getUse());
         B1.setBounds(780, 370, 70, 30 );
         m.add(B1);
-        Boton2 B2 = new Boton2("Fanta", m, m.GetExp());
+        Boton2 B2 = new Boton2("Fanta", m, m.GetExp(), m.getUse());
         B2.setBounds(950, 370, 70, 30 );
         m.add(B2);
         
