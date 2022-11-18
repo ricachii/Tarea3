@@ -14,6 +14,6 @@ import java.awt.Graphics;
         g.setColor(Color.RED);
         g.fillRect(x,y,60,30);
         g.setColor(Color.BLACK);
-        g.drawString("Coca-cola",x+4,y+16);
+        g.drawString(Serie+"",x+4,y+16);
     }
 }

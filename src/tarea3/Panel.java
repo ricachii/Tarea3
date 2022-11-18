@@ -13,10 +13,13 @@ import javax.swing.JPanel;
 
 public class Panel extends JPanel implements MouseListener{
     
-  private Expendedor E = new Expendedor(3,1500,600,50);
-    private Comprador C =new Comprador(E,100,50);
+    private Expendedor E = new Expendedor(3,1000,600,50);
+    private Moneda1000 M = new Moneda1000(100);
+    private Comprador C =new Comprador(M,E,3,105,50);
+    
     
     public Panel(){
+        super();
         this.setBackground(Color.LIGHT_GRAY);
         addMouseListener(this);
     }
@@ -24,14 +27,20 @@ public class Panel extends JPanel implements MouseListener{
         super.paint(g);
         if(E!=null)E.paint(g);
         if(C!=null)C.paint(g);
+        if(M!=null)M.paint(g);
         
     }
     public void mouseClicked(MouseEvent e) {
     }
     public void mousePressed(MouseEvent e) {
-          C.click(e.getX(),e.getY());
-          repaint();
-     
+        try{
+        C.click(e.getX(),e.getY());
+        E.comprarBebida(M, 1);
+        repaint();
+        System.out.println("press");
+        }catch (PagoIncorrectoException | NoHayBebidaException | PagoInsuficienteException ex) {
+          Logger.getLogger(Panel.class.getName()).log(Level.SEVERE, null, ex);
+      }
     }
     public void mouseReleased(MouseEvent e) {;}
     public void mouseEntered(MouseEvent e) {;}

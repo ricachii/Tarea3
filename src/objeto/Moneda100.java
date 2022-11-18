@@ -4,13 +4,17 @@ package objeto;
 import java.awt.Graphics;
 
 public class Moneda100 extends Moneda {
-    private int x,y;
-    public Moneda100(int a, int b){
-        super();
+
+    public Moneda100(int ser){
+        super(ser);
+
+    }
+    @Override
+    public void setPosicion(int a, int b){
         this.x = a;
         this.y = b;
     }
-
+    @Override
     public int getValor(){
         return 100;
     }

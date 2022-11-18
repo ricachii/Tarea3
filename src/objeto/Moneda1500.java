@@ -6,10 +6,10 @@ import java.awt.Graphics;
 
 
 public class Moneda1500 extends Moneda{
-    private int x,y;
     
-    public Moneda1500(){
-        super();
+    
+    public Moneda1500(int ser){
+        super(ser);
       
     }
     public int getValor(){

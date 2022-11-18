@@ -14,7 +14,7 @@ public class Sprite extends Bebida{
         g.setColor(Color.GREEN);
         g.fillRect(x,y,60,30);
         g.setColor(Color.WHITE);
-        g.drawString("Sprite", x+8, y+15);
+        g.drawString(Serie+"", x+8, y+15);
     }
 }
 

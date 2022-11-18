@@ -4,13 +4,17 @@ import java.awt.Graphics;
 
 
 public class Moneda1000 extends Moneda{
-    private int x,y;
-    public Moneda1000(int a, int b){
-        super();
-        this.x = a;
-        this.y = b;
+  
+    public Moneda1000(int ser){
+        super(ser);
         
     }
+    @Override
+    public void setPosicion(int a, int b){
+        this.x = a;
+        this.y = b;
+    }
+    @Override
     public int getValor(){
         return 1000;
     }
