@@ -28,6 +28,6 @@ public class Moneda100 extends Moneda {
         g.setColor(Color.YELLOW);
         g.fillOval(x,y,50,50);
         g.setColor(Color.BLACK);
-        g.drawString("100" + getSerie(), x+15, y+25);
+        g.drawString("100", x+15, y+25);
     }
 }

@@ -13,6 +13,8 @@ public class Expendedor {
     private ContenedorBebida c;
     private int x, y;
     private Deposito coca, sprite, fanta;
+    private int numeroBebida;
+    private Bebida b1,b2,b3;
 
     public Expendedor(int numBebidas, int precioBebidas, int a, int b) {
         this.x = a;
@@ -23,8 +25,9 @@ public class Expendedor {
         fanta = new Deposito(x + 320, y);
         c = new ContenedorBebida(x + 120, y + 400);
         this.precio = precioBebidas;
-
-        for (int i = 0; i < numBebidas; i++) {  //Etiquetando bebidas
+        this.numeroBebida = numBebidas;
+          
+        for (int i = 0; i < numeroBebida; i++) {  //Etiquetando bebidas
 
             coca.addBebida(new CocaCola(i + 100)); //Numero de serie 
             sprite.addBebida(new Sprite(i + 200));
@@ -136,6 +139,30 @@ public class Expendedor {
         sprite.paint(g);
         fanta.paint(g);
         c.paint(g);
+        if(coca.empty() == true){
+            for (int i = 0; i < numeroBebida; i++) {
+            int j = 6;
+            coca.addBebida(new CocaCola((int)(Math.random()*((199-100)+1))+100));
+            coca.llenarDep(g);
+            j++;
+            }
+        }
+        if(sprite.empty() == true){
+            for (int i = 0; i < numeroBebida; i++) {
+            int j = 6;
+            sprite.addBebida(new Sprite((int)(Math.random()*((299-200)+1))+200));
+            sprite.llenarDep(g);
+            j++;
+            }
+        }
+        if(fanta.empty() == true){
+            for (int i = 0; i < numeroBebida; i++) {
+            int j = 6;
+            fanta.addBebida(new Fanta((int)(Math.random()*((399-300)+1))+300));
+            fanta.llenarDep(g);
+            j++;
+            }
+        }
     }
 
 }

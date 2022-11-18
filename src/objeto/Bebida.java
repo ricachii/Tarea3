@@ -19,4 +19,5 @@ public abstract class Bebida{
     }
     public abstract String beber();
     public abstract void paint(Graphics g);
+
 }

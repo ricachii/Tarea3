@@ -43,10 +43,23 @@ public class Deposito {
         for (int i = 0; i < a1.size(); i++) {
            a1.get(i).setPosicion(x1+30,50*i+y1+20);
            a1.get(i).paint(g); 
+        }       
+    }
+    
+    public void llenarDep(Graphics g){
+        if(a1.size() == 0){
+            for (int i = 0; i < a1.size(); i++) {         
+           a1.get(i).setPosicion(x1+30,50*i+y1+20);
+           a1.get(i).paint(g); 
+        }
+       }
+    }
+    
+    public void mover(){
+        if(a1.size() == 0){
+            y1 = 50;
+        }else{ 
+        y1 += 50;
         }
     }
-    public void mover(){
-        y1 += 50;
-    }
 }
-    
