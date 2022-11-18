@@ -45,12 +45,12 @@ public class Comprador {
     }
     
     public void click(int a,int b){  
-             
-        
+
         ser1 = (int)(Math.random()*((100-10)+1))+10; //generamos series aleatorias para las monedas  
         ser2 = (int)(Math.random()*((500-10)+1))+10;
         ser3 = (int)(Math.random()*((1000-10)+1))+10;
         if(a>=x+30&& a<=x+80 && b>=y+350 && b<=y+400){
+            new Moneda100(ser1).setPosicion(x+330,y+300);
         System.out.println(ser1+"");
         }
         if(a>=x+90&& a<=x+140 && b>=y+350 && b<=y+400){

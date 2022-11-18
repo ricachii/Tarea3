@@ -30,12 +30,17 @@ public class Panel extends JPanel implements MouseListener{
     
         
     }
+    public void CompradorBebida(){
+        
+    }
+    public Expendedor GetExp(){
+        return E;
+    }
     public void mouseClicked(MouseEvent e) {
     }
     public void mousePressed(MouseEvent e) {
         
         C.click(e.getX(),e.getY());
-        E.comprarBebida(M, 1);
         repaint();
         System.out.println("press");
          
