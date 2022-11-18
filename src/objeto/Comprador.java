@@ -56,15 +56,15 @@ public class Comprador {
             System.out.println(ser1+"");
         }
         if(a>=x+90&& a<=x+140 && b>=y+350 && b<=y+400){
-            use.setMoneda(new Moneda500(ser1), x-75,y+95); 
+            use.setMoneda(new Moneda500(ser2), x-75,y+95); 
         System.out.println(ser2+"");
         }
         if(a>=x+220&& a<=x+270 && b>=y+350 && b<=y+400){
-            use.setMoneda(new Moneda1000(ser1), x-75,y+95); 
+            use.setMoneda(new Moneda1000(ser3), x-75,y+95); 
         System.out.println(ser3+"");
         }
         if(a == x+55 && b == y+70 ){
-            //C.getBebida(x, y, C);
+            ;
         }
     }
     
