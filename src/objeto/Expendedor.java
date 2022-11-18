@@ -116,6 +116,18 @@ public class Expendedor {
     public Moneda getVuelto() {
         return dep.getMoneda();
     }
+    public int getX(){
+        return x;
+    }
+    public int getY(){
+        return y;
+    }
+    
+    public ContenedorBebida getCont(){
+        return c;
+    }
+    
+       
 
     public void paint(Graphics g) {
         g.setColor(Color.blue);

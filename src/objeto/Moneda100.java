@@ -1,6 +1,7 @@
 
 package objeto;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class Moneda100 extends Moneda {
@@ -24,7 +25,9 @@ public class Moneda100 extends Moneda {
     }
     @Override
     public void paint(Graphics g){
-        g.drawOval(x,y,50,50);
-        g.drawString("100", x+15, y+25);
+        g.setColor(Color.YELLOW);
+        g.fillOval(x,y,50,50);
+        g.setColor(Color.BLACK);
+        g.drawString("100" + getSerie(), x+15, y+25);
     }
 }

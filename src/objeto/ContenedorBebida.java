@@ -16,8 +16,10 @@ import java.awt.Color;
     public void setBebida(Bebida be){
         this.c=be;
     }
-    public Bebida getBebida(int xx,int yy,ContenedorBebida C){
-        return c;
+    public Bebida getBebida(){
+        Bebida aa = c;
+        c = null;
+        return aa;
     }
     public void paint(Graphics g) {
         

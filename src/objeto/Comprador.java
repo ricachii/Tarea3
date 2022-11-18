@@ -28,6 +28,7 @@ public class Comprador {
         this.y = b;
         this.E = e;
         serie = e.getSerie(Tipo);
+        C = E.getCont();
         
         
         depB = new Deposito(x+10,y+10);
@@ -63,8 +64,11 @@ public class Comprador {
             use.setMoneda(new Moneda1000(ser3), x-75,y+95); 
         System.out.println(ser3+"");
         }
-        if(a == x+55 && b == y+70 ){
-            ;
+        if((a >= E.getX() + 170 && a <= E.getX()+236) && (b >= E.getY() + 468 && b <= E.getY() + 550)){
+            
+            System.out.println("Bebida");
+            depB.addBebida(C.getBebida());
+            
         }
     }
     

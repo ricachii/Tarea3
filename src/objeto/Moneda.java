@@ -13,7 +13,7 @@ public abstract class Moneda {
         this.y = b;
     }
     public int getSerie(){
-        return this.hashCode();
+        return this.serie;
     }
 
    

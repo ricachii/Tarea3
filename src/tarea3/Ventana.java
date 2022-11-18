@@ -13,7 +13,7 @@ public class Ventana extends JFrame {
         Panel m = new Panel();
         m.setLayout(null);
         this.add(m,BorderLayout.CENTER);
-        Boton B = new Boton("Sale", m, m.GetExp(), m.getUse());
+        Boton B = new Boton("Cola", m, m.GetExp(), m.getUse());
         B.setBounds(630, 370, 70, 30 );
         m.add(B);
         Boton1 B1 = new Boton1("Sprite", m, m.GetExp(), m.getUse());
@@ -24,7 +24,7 @@ public class Ventana extends JFrame {
         m.add(B2);
         
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setSize(1200,720);
+        this.setSize(1300,720);
         this.setVisible(true);
     }
 }
