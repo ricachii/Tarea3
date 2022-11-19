@@ -14,8 +14,7 @@ import javax.swing.JPanel;
 public class Panel extends JPanel implements MouseListener{
     
     private Expendedor E = new Expendedor(6,500,600,50);
-    private Moneda1000 M = new Moneda1000(100);
-    private Comprador C =new Comprador(M,E,3,105,50);
+    private Comprador C =new Comprador(null,E,3,105,50);
     
     
     public Panel(){

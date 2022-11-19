@@ -56,15 +56,15 @@ public class Comprador {
         ser3 = (int)(Math.random()*((1000-10)+1))+10;
         if(a>=x+30&& a<=x+80 && b>=y+350 && b<=y+400){
             use.setMoneda(new Moneda100(ser1), x-75,y+95);          
-            System.out.println(ser1+"");
+            System.out.println("Numero de serie de la moneda 100: "+ser1);
         }
         if(a>=x+90&& a<=x+140 && b>=y+350 && b<=y+400){
             use.setMoneda(new Moneda500(ser2), x-75,y+95); 
-        System.out.println(ser2+"");
+        System.out.println("Numero de serie de la moneda 500: "+ser2);
         }
         if(a>=x+220&& a<=x+270 && b>=y+350 && b<=y+400){
             use.setMoneda(new Moneda1000(ser3), x-75,y+95); 
-        System.out.println(ser3+"");
+        System.out.println("Numero de serie de la moneda 1000: "+ser3);
         }
         if((a >= E.getX() + 170 && a <= E.getX()+236) && (b >= E.getY() + 468 && b <= E.getY() + 550)){
             
@@ -74,8 +74,9 @@ public class Comprador {
         }
         if((a >= dep.getX() + 50 && a <= dep.getX()+110) && (b >= dep.getY() + 260 && b <= dep.getY() + 300)){
             if(dep.Comprobar() != null){
+            System.out.println("Moneda Vuelto "+dep.Comprobar().getSerie());    
             depV.addMoneda(dep.getMoneda());
-            System.out.println("Moneda");
+            
             }
             
         

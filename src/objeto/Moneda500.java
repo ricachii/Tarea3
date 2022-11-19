@@ -25,7 +25,7 @@ public class Moneda500 extends Moneda {
     @Override
     public void paint(Graphics g){
         g.setColor(Color.ORANGE);
-        g.drawOval(x,y,50,50); 
+        g.fillOval(x,y,50,50); 
         g.setColor(Color.BLACK);
         g.drawString("500", x+15, y+25);
     }
