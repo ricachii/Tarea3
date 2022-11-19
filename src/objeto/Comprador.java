@@ -15,6 +15,7 @@ public class Comprador {
     private Expendedor E;
     private Deposito depB;
     private DepositoVuelto depV;
+    private DepositoVuelto dep;
     private Moneda100 M;
     private Moneda500 M5;
     private Moneda1000 M10;
@@ -29,6 +30,7 @@ public class Comprador {
         this.E = e;
         serie = e.getSerie(Tipo);
         C = E.getCont();
+        dep = E.getDepv();
         
         
         depB = new Deposito(x+10,y+10);
@@ -70,7 +72,16 @@ public class Comprador {
             depB.addBebida(C.getBebida());
             
         }
+        if((a >= dep.getX() + 50 && a <= dep.getX()+110) && (b >= dep.getY() + 260 && b <= dep.getY() + 300)){
+            if(dep.Comprobar() != null){
+            depV.addMoneda(dep.getMoneda());
+            System.out.println("Moneda");
+            }
+            
+        
+        }
     }
+
     
     public String queBebiste(){
         return sabor;

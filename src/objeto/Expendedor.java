@@ -19,7 +19,7 @@ public class Expendedor {
     public Expendedor(int numBebidas, int precioBebidas, int a, int b) {
         this.x = a;
         this.y = b;
-        dep = new DepositoVuelto(x + 210, y + 110);
+        dep = new DepositoVuelto(x + 450, y + 190);
         coca = new Deposito(x, y);
         sprite = new Deposito(x + 160, y);
         fanta = new Deposito(x + 320, y);
@@ -129,6 +129,9 @@ public class Expendedor {
     public ContenedorBebida getCont(){
         return c;
     }
+    public DepositoVuelto getDepv(){
+        return dep;
+    }
     
        
 
@@ -138,6 +141,7 @@ public class Expendedor {
         coca.paint(g);
         sprite.paint(g);
         fanta.paint(g);
+        dep.paint(g);
         c.paint(g);
         if(coca.empty() == true){
             for (int i = 0; i < numeroBebida; i++) {
